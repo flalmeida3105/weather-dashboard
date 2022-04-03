@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Ignore MAC files 
+.DS_Store
+*._index.html
+*._script.js
+*._style.css
