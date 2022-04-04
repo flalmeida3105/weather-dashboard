@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <nav class="px-2 bg-white">
+            <div class="container flex flex-wrap justify-center items-center mx-auto">
+                <img src="./assets/images/weather-few-clouds.svg" class="mr-3 h-6 sm:h-10" alt="Weather Dashboard Logo" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-black">Weather Dashboard</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Sidebar container -->
+        <section class="container sidebar">
+            <!-- search bar -->
+            <aside class="w-64" aria-label="Sidebar">
+                <div class="sidebar-search">
+                    <p>Search bar</p>
+                </div>
+                <div class="overflow-y-auto py-4 px-3 rounded-lg bg-gray-50 ">
+                    <ul class="space-y-2">
+                        <li class="flex items-center p-2 text-base font-normal text-gray-900">
+                                <span class="flex-1 ml-3 whitespace-nowrap">Dashboard</span>
+                        </li>
+                        <li class="flex items-center p-2 text-base font-normal text-gray-900">
+                                <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
