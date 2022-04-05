@@ -18,20 +18,20 @@
             <div class="city-search">
                 <!-- Search for cities -->
                 <h2>Search for a City:</h2>
-                <form action="submit" id="city-search-form">
+                <form action="button" id="city-search-form">
                     <input type="text" id="city-location" placeholder="Enter a city"><br>
-                    <button type="submit" class="btn">Search</button>                 
+                    <button type="button" class="btn">Search</button>                 
                 </form>
                 <!-- Display city history -->
                 <div class="city-history" id="city-history">
-                    <button type="submit" class="btn-history">City History</button>
-                    <button type="submit" class="btn-history">City History</button>
-                    <button type="submit" class="btn-history">City History</button>
-                    <button type="submit" class="btn-history">City History</button>
-                    <button type="submit" class="btn-history">City History</button>
-                    <button type="submit" class="btn-history">City History</button>
-                    <button type="submit" class="btn-history">City History</button>
-                    <button type="submit" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
+                    <button type="button" class="btn-history">City History</button>
 
                 </div>
             </div>
@@ -39,14 +39,14 @@
         <div class="current-weather">
             <!-- Display current and future weather conditions -->
             <div class="weather-info">
-                <div class="current-city" id="current-city">
-                    <h2>City <span id="current-date">Local Date</span></h2>
+                <div class="current-city">
+                    <h2 id="current-city">City</h2>
                 </div>
                 <div class="current-weather-conditions">
-                    <p>Temperature: <span id="current-temp">40C</span></p>
-                    <p>Wind: <span id="current-wind">40C</span></p>
-                    <p>Humidity: <span id="current-humidity">40C</span></p>
-                    <p>UV Index: <span id="current-uv">40C</span></p>
+                    <p>Temperature: <span id="current-temp">F</span></p>
+                    <p>Wind: <span id="current-wind"></span>MPH</p>
+                    <p>Humidity: <span id="current-humidity">%</span></p>
+                    <p>UV Index: <span id="current-uv"></span></p>
                 </div>
             </div>
             <div class="forecast-info">
@@ -54,35 +54,35 @@
                 <div class="future-forecast-info">
                     <div class="future-forecast">
                         <p class="day">01/01/01</p>
-                        <img src="" alt="Weather Icon">
-                        <p>Temperature: <span id="current-temp">40C</span></p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
+                        <p>Temp: <span id="current-temp">40C</span></p>
                         <p>Wind: <span id="current-wind">40C</span></p>
                         <p>Humidity: <span id="current-humidity">40C</span></p>
                     </div>
                     <div class="future-forecast">
                         <p class="day">01/01/01</p>
-                        <img src="" alt="Weather Icon">
-                        <p>Temperature: <span id="current-temp">40C</span></p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
+                        <p>Temp: <span id="current-temp">40C</span></p>
                         <p>Wind: <span id="current-wind">40C</span></p>
                         <p>Humidity: <span id="current-humidity">40C</span></p>
                     </div>
                     <div class="future-forecast">
                         <p class="day">01/01/01</p>
-                        <img src="" alt="Weather Icon">
-                        <p>Temperature: <span id="current-temp">40C</span></p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
+                        <p>Temp: <span id="current-temp">40C</span></p>
                         <p>Wind: <span id="current-wind">40C</span></p>
                         <p>Humidity: <span id="current-humidity">40C</span></p>
                     </div><div class="future-forecast">
                         <p class="day">01/01/01</p>
-                        <img src="" alt="Weather Icon">
-                        <p>Temperature: <span id="current-temp">40C</span></p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
+                        <p>Temp: <span id="current-temp">40C</span></p>
                         <p>Wind: <span id="current-wind">40C</span></p>
                         <p>Humidity: <span id="current-humidity">40C</span></p>
                     </div>
                     <div class="future-forecast">
                         <p class="day">01/01/01</p>
-                        <img src="" alt="Weather Icon">
-                        <p>Temperature: <span id="current-temp">40C</span></p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
+                        <p>Temp: <span id="current-temp">40C</span></p>
                         <p>Wind: <span id="current-wind">40C</span></p>
                         <p>Humidity: <span id="current-humidity">40C</span></p>
                     </div>
@@ -91,6 +91,7 @@
         </div>
 
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

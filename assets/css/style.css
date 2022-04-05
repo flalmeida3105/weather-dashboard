@@ -1,3 +1,5 @@
+
+
 /* Adding pseudo-class (variables) */
 :root {
     --primary-color: #b0aeb251;
@@ -65,6 +67,7 @@ input {
     margin-top: 10px;
     width: 100%;
     border-radius: 5px;
+    font-size: 1.2rem;
 }
 
 .btn {
@@ -81,7 +84,7 @@ input {
     color: aliceblue;
 }
 
-.btn:hover {
+.btn:hover, .btn-history {
     color: var(--primary);
     background-color: var(--tertiary-color);
     transform: translate(0, 0);
@@ -114,10 +117,11 @@ input {
 .weather-info {
     padding: 10px;
     border: #000000 1px solid;
+    margin-bottom: 20px;
 }
-.forecast-info {
+/* .forecast-info {
     padding: 10px;
-}
+} */
 
 p {
     margin: 10px 0;
@@ -129,8 +133,11 @@ p {
 }
 
 .future-forecast {
-    background-color:rgb(52, 54, 66);
+    background-color: rgb(73, 83, 113, 0.5);
     color: #ffffff;
     padding: 10px;
-    margin: 5px;
+    align-items: left;
+    justify-content: space-evenly;
+    width: 18%;
+    /* margin: 5px; */
 }
