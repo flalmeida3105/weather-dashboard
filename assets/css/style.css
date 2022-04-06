@@ -114,6 +114,12 @@ input {
     right: 0;
     top: 5.2vh;
 }
+
+.current-city {
+    display: flex;
+    align-items: center;
+}
+
 .weather-info {
     padding: 10px;
     border: #000000 1px solid;

@@ -1,7 +1,8 @@
 var getCityLocationElement = document.getElementById("city-location");
-var getCurrentCityElement = document.getElementById("current-city");
+var getCurrentCityElement = document.querySelector(".current-city");
 var searchCityLocation = document.querySelector(".btn");
 var getCurrentWeatherConditionsElement = document.querySelector(".current-weather-conditions");
+var getForecastInfo = document.querySelector(".future-forecast-info");
 var apiKey = "2721e9284e13e8d9c9f8b97f5cb1de42";
 
 // function getCurrentDate() {
@@ -19,35 +20,55 @@ function getCurrentWeather(data) {
 
     
     // Format weather api url
-    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + apiKey;
+    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=metric&appid=" + apiKey;
 
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    console.log(data);
+                    console.log(data)
                 var temp = data.current.temp;
-                console.log(temp)
                 var wind = data.current.wind_speed;
                 var humidity = data.current.humidity;
                 var uvIndex = data.current.uvi;
+                var currentDate = moment().format("(MM/DD/YYYY)");  
+                
 
-                var currentDate = moment().format("(DD/MM/YYYY)");  
-                var setCityLocation = getCityLocationElement.value = city + " " + currentDate;
-                getCurrentCityElement.innerHTML = setCityLocation;
-                    getCurrentWeatherConditionsElement.innerHTML = `
-                        <div class="current-weather-conditions">
-                            <p>Temperature: <span id="current-temp">${temp}</span></p>
-                            <p>Wind: <span id="current-wind">${wind}</span></p>
-                            <p>Humidity: <span id="current-humidity">${humidity}</span></p>
-                            <p>UV Index: <span id="current-uv">${uvIndex}</span></p>
+                var futureForecast = '';
+                data.daily.forEach((day, index) => {
+                    if(index == 0) {
+                        var setCityWeatherImage = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
+                        var setCityLocation = getCityLocationElement.value = `
+                            <h2 id="current-city-weather">${city} ${currentDate}</h2>
+                            <img src='${setCityWeatherImage}' alt="Weather Icon">
+                            `
+                            getCurrentCityElement.innerHTML = setCityLocation;
+                                getCurrentWeatherConditionsElement.innerHTML = `
+                                    <div class="current-weather-conditions">
+                                        <p>Temperature: <span id="current-temp">${temp}&degC</span></p>
+                                        <p>Wind: <span id="current-wind">${wind}km/h</span></p>
+                                        <p>Humidity: <span id="current-humidity">${humidity}%</span></p>
+                                        <p>UV Index: <span id="current-uv">${uvIndex}</span></p>
+                                    </div>
+                        `
+                        getCityLocationElement.value = '';
+                    } else if (index <= 5 ) {
+                        futureForecast += `
+                        <div div class="future-forecast" >
+                            <p class="day">${window.moment(day.dt*1000).format("MM/DD/YYYY")}</p>
+                            <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather Icon">
+                            <p>Temp: <span id="current-temp">${temp}&degC</span></p>
+                            <p>Wind: <span id="current-wind">${wind}km/h</span></p>
+                            <p>Humidity: <span id="current-humidity">${humidity}%</span></p>
                         </div>
-                    `
-                getCityLocationElement.value = '';
-                });
-            }
-        })
-
+                        `
+                    } 
+                    
+                })
+                getForecastInfo.innerHTML = futureForecast;
+            });
+        } 
+    })
 };
 
 
