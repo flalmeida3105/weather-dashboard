@@ -53,9 +53,9 @@ function getCurrentWeather(data) {
                         <div div class="future-forecast" >
                             <p class="day">${window.moment(day.dt*1000).format("MM/DD/YYYY")}</p>
                             <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather Icon">
-                            <p>Temp: <span id="current-temp">${temp}&degC</span></p>
-                            <p>Wind: <span id="current-wind">${wind}km/h</span></p>
-                            <p>Humidity: <span id="current-humidity">${humidity}%</span></p>
+                            <p>Temp: <span id="current-temp">${day.temp.day}&degC</span></p>
+                            <p>Wind: <span id="current-wind">${day.wind_speed}km/h</span></p>
+                            <p>Humidity: <span id="current-humidity">${day.humidity}%</span></p>
                         </div>
                         `
                     } 
