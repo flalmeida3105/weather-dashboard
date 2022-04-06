@@ -30,6 +30,17 @@ function getCurrentWeather(data) {
                 var currentDate = moment().format("(MM/DD/YYYY)");  
                 var futureForecast = '';
 
+                if (uvIndex <= 2) {
+                    color = "#3cff00"
+                } else if (uvIndex <= 5) {
+                    color = "#ffff00"
+                } else if (uvIndex <= 7) {
+                    color = "#ff7518"
+                } else if (uvIndex <= 10) {
+                    color = "#ff0000"
+                } else {
+                    color = "#74018d"
+                }
 
                 data.daily.forEach((day, index) => {
                     if(index == 0) {
@@ -44,7 +55,7 @@ function getCurrentWeather(data) {
                                         <p>Temperature: <span id="current-temp">${temp}&degC</span></p>
                                         <p>Wind: <span id="current-wind">${wind}km/h</span></p>
                                         <p>Humidity: <span id="current-humidity">${humidity}%</span></p>
-                                        <p>UV Index: <span id="current-uv">${uvIndex}</span></p>
+                                        <p>UV Index: <span style="background-color:${color}" id="current-uv">${uvIndex}</span></p>
                                     </div>
                         `
                         getCityLocationElement.value = '';

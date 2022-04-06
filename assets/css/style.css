@@ -124,6 +124,10 @@ input {
     align-items: center;
 }
 
+#current-uv {
+    padding: 6px;
+}
+
 .weather-info {
     padding: 10px;
     border: #000000 1px solid;
@@ -136,6 +140,8 @@ input {
 p {
     margin: 10px 0;
 }
+
+
 
 .future-forecast-info {
     display: flex;
