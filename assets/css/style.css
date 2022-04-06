@@ -104,6 +104,10 @@ input {
     background-color: var(--grey);
 }
 
+.btn-history::first-letter {
+    text-transform: capitalize;
+}
+
 .current-weather {
     width: 70%;
     padding: 20px;
