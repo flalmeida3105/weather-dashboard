@@ -37,7 +37,7 @@ function getCurrentWeather(data) {
                 var futureForecast = '';
                 data.daily.forEach((day, index) => {
                     if(index == 0) {
-                        var setCityWeatherImage = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
+                        var setCityWeatherImage = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
                         var setCityLocation = getCityLocationElement.value = `
                             <h2 id="current-city-weather">${city} ${currentDate}</h2>
                             <img src='${setCityWeatherImage}' alt="Weather Icon">
@@ -56,7 +56,7 @@ function getCurrentWeather(data) {
                         futureForecast += `
                         <div div class="future-forecast" >
                             <p class="day">${window.moment(day.dt*1000).format("MM/DD/YYYY")}</p>
-                            <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather Icon">
+                            <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather Icon">
                             <p>Temp: <span id="current-temp">${temp}&degC</span></p>
                             <p>Wind: <span id="current-wind">${wind}km/h</span></p>
                             <p>Humidity: <span id="current-humidity">${humidity}%</span></p>
@@ -81,7 +81,7 @@ function getButtonClickHandler() {
     var getCity = getCityLocationElement.value;
     console.log(getCity);
 
-    var apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + getCity + "&limit=5&appid=" + apiKey;
+    var apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + getCity + "&limit=5&appid=" + apiKey;
     console.log(apiUrl);
 
     fetch(apiUrl)
