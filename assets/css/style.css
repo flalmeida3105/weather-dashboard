@@ -119,9 +119,14 @@ input {
     top: 5.2vh;
 }
 
+.current-weather h2 {
+    margin-left: 4px;
+}
+
 .current-city {
     display: flex;
     align-items: center;
+    background-color: rgb(73, 83, 113, 0.2);
 }
 
 #current-uv {
@@ -133,12 +138,9 @@ input {
     border: #000000 1px solid;
     margin-bottom: 20px;
 }
-/* .forecast-info {
-    padding: 10px;
-} */
 
 p {
-    margin: 10px 0;
+    margin: 10px 5px;
 }
 
 .future-forecast-info {
@@ -153,5 +155,4 @@ p {
     align-items: left;
     justify-content: space-evenly;
     width: 18%;
-    /* margin: 5px; */
 }
